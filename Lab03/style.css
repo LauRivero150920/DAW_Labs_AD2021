@@ -10,6 +10,11 @@ body {
 
 #text{
     text-align: justify;
+    padding: 20px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: rgb(126, 28, 28);
+    margin-bottom: 10px; 
 }
 
 #text:hover{
