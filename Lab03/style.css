@@ -1,0 +1,84 @@
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    background-color: rgb(127, 229, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 1em;
+    padding-top: 1em;
+    text-align: justify;
+}
+
+#text{
+    text-align: justify;
+}
+
+#text:hover{
+    background-color: rgb(255, 230, 0);
+} 
+
+strong{
+    color: rgb(116, 27, 27);
+}
+
+#main_title:hover{
+    font-size: 50px;
+}
+
+.image{
+    display: inline-block;
+    width: 33%;
+    height: 250px;
+}
+
+.bull_point{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    
+}
+
+#pt_impar:hover{
+    color: rgb(92, 16, 82);
+}
+
+#pt_par:hover{
+    background-color: darkblue;
+}
+
+#link:hover{
+    color:rgb(255, 255, 255);
+    background-color: black;
+}
+
+.button {
+    margin: 10px;
+    border-top: 1px solid #c9c018;
+    background: #65c5d6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e0af1b), to(#65c5d6));
+    background: -webkit-linear-gradient(top, #e0af1b, #65c5d6);
+    background: -moz-linear-gradient(top, #e0af1b, #65c5d6);
+    background: -ms-linear-gradient(top, #e0af1b, #65c5d6);
+    background: -o-linear-gradient(top, #e0af1b, #65c5d6);
+    padding: 8px 16px;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    border-radius: 32px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 24px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    }
+
+    .button:hover {
+    border-top-color: #783128;
+    background: #783128;
+    color: #cfbabd;
+    }
+
+.button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+    }
