@@ -17,3 +17,15 @@ h2, h1{
 h2:hover {
     color: white;
 }
+
+.title_txt{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#data{
+    color: rgb(192, 13, 13);
+}
+
+img{
+    vertical-align: middle;
+}
