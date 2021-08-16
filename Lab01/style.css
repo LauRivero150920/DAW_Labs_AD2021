@@ -1,0 +1,19 @@
+body{
+    margin: 0 auto;
+    max-width: 70em;
+    color: rgb(124, 0, 128);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(174, 228, 250);
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+h2, h1{
+    color: blue;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+h2:hover {
+    color: white;
+}
