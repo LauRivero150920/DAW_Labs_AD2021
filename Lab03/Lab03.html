@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Lab 02</title>
+    <style>
+        #quest_cont{
+            color: rgb(55, 87, 114);
+            padding: 20px;
+        }
+        .answer{
+            color:rgb(68, 66, 8);
+        }
+        #quest_cont:hover{
+            background-color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,6 +47,24 @@
         <h2 id="pt_impar" class="bull_point">Punto 3: Heck pupperino smol doing me a frighten, heckin angery woofer fluffer.</h2>
         <h2 id="pt_par" class="bull_point">Punto 4: Clouds borkdrive vvv extremely cuuuuuute heckin good boys and girls wow such tempt, mlem woofer pats he made many woofs</h2>
         <h3 id="link">Lorem Ipsums generados con: https://doggoipsum.com/</h3>
+    </div>
+    <br><br>
+    <div id="quest_cont">
+        <h1 style="color: rgb(187, 52, 135)">Preguntas</h1>
+        <h2 style="font-weight: bold">Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h2>
+        <h3 class="answer">Mi recomendación es que se use lo menos posible y únicamente para cosas indispensables, ya que si se
+            pone demasiado podría generar confusiones en cuanto a la jerarquia</h3>
+        
+        <h2 style="font-weight: bold">Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h2>
+        <h3 class="answer">Se debe tener cuidado con las dimensiones de la imágen ya que podría verse distorsionada o pixeleada</h3>
+        
+        <h2 style="font-weight: bold">Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</h2>
+        <h3 class="answer">Depende de lo que se desee hacer con la página, ya que en ocasiones será mejor un tamaño fijo y en
+            otras será mejor que el texto se pueda adaptar al tamaño de la ventana</h3>
+
+        <h2 style="font-weight: bold">¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h2>
+        <h3 class="answer">Mejora el sitio ya que al tener todo el CSS en una sola linea mejora el rendimiento de la página al
+            evitarle leer todos los saltos de linea, elementos y demás. Pero esto vuelve más complicada la edición del css.</h3>
     </div>
     <button class="button">Press me!</button>
 </body>
