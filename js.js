@@ -72,3 +72,6 @@ menu.push({platillo: "Carne asada", precio: "30.00"});
 menu.push({platillo: "Frijolitos charros", precio: "15.00"});
 
 console.log(menu);
+
+// --Escribir en el HTML
+document.write("<h1>Hola mundo</h1>");
