@@ -28,6 +28,18 @@ for(let i = 0; i < 10; i++){
 }
 
 // --Alerts, prompts y confirms, escribir en el html
+window.alert("Esto es un alert de hambre");
+
+const comida = window.prompt("¿Cuál es tu comida favorita?");
+console.info("La comida favorita del usuario es: " + comida);
+
+const respuesta = window.confirm("¿Tienes mucha hambre?");
+if(respuesta){
+    console.warn("Vamos a comer " + comida + " ahora");
+}
+else{
+    console.log("Podemos penar cual es el mejor lugar para comer " + comida);
+}
 
 // --Funciones
 
