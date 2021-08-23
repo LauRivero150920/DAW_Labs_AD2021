@@ -67,3 +67,8 @@ platillos.pop();
 console.log(platillos);
 
 // --Objetos 
+const menu = [];
+menu.push({platillo: "Carne asada", precio: "30.00"});
+menu.push({platillo: "Frijolitos charros", precio: "15.00"});
+
+console.log(menu);
