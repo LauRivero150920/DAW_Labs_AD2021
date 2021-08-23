@@ -6,7 +6,7 @@ console.error("Error");
 console.table()
 
 // --Variables, constantes y alcance
-const precio = 99.99;
+const precio = 9.99;
 // var -> Ya no se usa :c
 // let tiene alcance solo dentro del ámbito en el que se declara, es decir entre las llaves {}
 // var tiene alcance en toda la función donde fue declarada
@@ -42,8 +42,15 @@ else{
 }
 
 // --Funciones
+function calcular_precio(numero_tacos){
+    return numero_tacos * precio;
+}
+
+console.log("Tu total es de $" + calcular_precio(7));
 
 // --Funciones flecha
+const calcular_precio_flecha = (numero_tacos) => numero_tacos * precio; 
+console.log("Tu total es de $" + calcular_precio_flecha(7));
 
 // --Arreglos
 
