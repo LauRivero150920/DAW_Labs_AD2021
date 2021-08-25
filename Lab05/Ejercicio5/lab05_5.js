@@ -8,5 +8,4 @@ function Invert(num){
     console.log(reverse);
     alert("El número invertido es " + reverse);
 }
-
 Invert(number);
