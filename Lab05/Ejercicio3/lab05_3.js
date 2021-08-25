@@ -18,8 +18,6 @@ for(let j = num_numbers_pos; j < 40; j++){
     numbers1[j] = Math.floor(Math.random() * -100);
 }
 
-
-
 function counter(numbers){
     for(let i = 0; i < 40; i++){
         if(numbers[i] === 0){
