@@ -26,4 +26,4 @@ function muestra_platillos(){
     document.getElementById("platillos").innerHTML = html;
 }
 
-document.getElementById("titulo_menu").onclick = muestra_platillos;
+document.getElementById("boton_menu").onclick = muestra_platillos;
