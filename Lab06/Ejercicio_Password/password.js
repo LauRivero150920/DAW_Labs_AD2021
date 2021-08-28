@@ -26,12 +26,11 @@ function character_length(password_1){
 }
 
 function special_character(password_1){
-    if(spec.test(password_1)){
+    if(spec.test(password_1) && password_1 != ""){
         spec_flag = true;
         return true;
     }
     spec_flag = false;
-    return false;
 }
 
 function upper_case(password_1){
@@ -39,7 +38,6 @@ function upper_case(password_1){
     if(password_1.charAt(i-1) === password_1.charAt(i-1).toUpperCase() && isNaN(password_1.charAt(i-1)) === true && spec_flag === false){
         return true;
     }
-    return false;
 }
 
 function has_number(password_1){
@@ -47,15 +45,10 @@ function has_number(password_1){
     if(isNaN(password_1.charAt(h-1)) === false && password_1 != ""){
         return true;
     }
-    else{
-        return false;
-    }
 }
 
 document.getElementById("pass2").onkeyup = equal_passwords;
 document.getElementById("pass1").onkeyup = password_strength;
-//document.getElementById("pass1").onkeyup = upper_case;
-//document.getElementById("pass1").onkeyup = special_character;
 
 function password_strength(){
     let password_1 = document.getElementById("pass1").value;
