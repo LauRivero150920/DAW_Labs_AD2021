@@ -1,0 +1,61 @@
+
+#shop_cont{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#shop_title{
+    text-align: center;
+}
+
+.product{
+    width: 30%;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+    text-align: center;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 2%;
+    padding: 5px;
+}
+
+.product:hover{
+    border: 3px solid #4dc4cc;
+    border-radius: 7px;
+    box-shadow: 0px 0px 20px #4dc4cc; 
+}
+.prod_image{
+    width: 70%;
+}
+
+.prod_quant{
+    width: 20%;
+}
+
+.shop{
+    background-color: rgb(192, 34, 34);
+    border: none;
+    margin: 2%;
+    border-radius: 7px;
+    width: 30%;
+    color: white;
+}
+
+#total{
+    width: 40%; 
+    margin-left: 30%;
+    margin-top: 30px;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 2%;
+    padding: 1%;
+}
+
+.disp{
+    color:white;
+    background-color: rgb(10, 148, 28);
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 20px;
+    text-align: center;
+}

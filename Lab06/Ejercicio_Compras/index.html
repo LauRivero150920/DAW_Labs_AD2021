@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Compras</title>
+</head>
+<body>
+    <div id="shop_cont">
+        <h1 id="shop_title">Productos</h1><br>
+
+        <div id="prod_1" class="product">
+            <h3 class="prod_title">Shawn Mendes: Handwritten</h3>
+            <img src="https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/602547634849.jpg" class="prod_image">
+            <h3 class="prod_price">Precio: $200</h3>
+            <div id="prod1_disp" class="disp"></div><br>
+            <label for="prod1_quant">Cantidad:</label>
+            <input type="number" id="prod1_quant" class="prod_quant" min="0" max="5" onKeyDown="return false">
+            <br>
+            <button class="shop" id="prod1_shop">Agregar</button>
+        </div>
+
+        <div id="prod_2" class="product">
+            <h3 class="prod_title">Olivia Rodrigo: Sour</h3>
+            <img src="https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/602438077441.jpg" class="prod_image">
+            <h3 class="prod_price">Precio: $250</h3>
+            <div id="prod2_disp" class="disp"></div><br>
+            <label for="prod2_quant">Cantidad:</label>
+            <input type="number" id="prod2_quant" class="prod_quant" min="0" max="7" onKeyDown="return false">
+            <br>
+            <button class="shop" id="prod2_shop">Agregar</button>
+        </div>
+
+        <div id="prod_3" class="product">
+            <h3 class="prod_title">The Score: ATLAS</h3>
+            <img src="https://pbs.twimg.com/media/DIpg8OPUIAEDqQZ.jpg" class="prod_image">
+            <h3 class="prod_price">Precio: $150</h3>
+            <div id="prod3_disp" class="disp"></div><br>
+            <label for="prod3_quant">Cantidad:</label>
+            <input type="number" id="prod3_quant" class="prod_quant" min="0" max="4" onKeyDown="return false">
+            <br>
+            <button class="shop" id="prod3_shop">Agregar</button>
+        </div>
+    </div>
+
+    <div id="total">
+        <div id="quantity" class="total_field"></div>
+        <div id="subtotal" class="total_field"></div>
+        <div id="iva" class="total_field"></div>
+        <div id="total_iva" class="total_field"></div>
+    </div>
+
+    <!--Script-->
+    <script src="compras.js"></script>
+</body>
+</html>
