@@ -1,0 +1,17 @@
+#pass_cont{
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#pass_title{
+    margin-top: 5%;
+}
+
+.pass_text{
+    font-size: medium;
+}
+
+.condition{
+    color: red;
+}

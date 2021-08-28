@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Validator</title>
+</head>
+<body>
+    <div id="pass_cont">
+    <h1 id="pass_title">Password</h1><br>
+    <p class="pass_text">Ingrese contraseña:</p>
+    <input type="password" name="" id="pass1">
+    <p class="pass_text">Confirme contraseña:</p>
+    <input type="password" name="" id="pass2"><br><br>
+    <button id="pass_submit">Submit</button><br><br>
+
+    <h4>Requerimientos de la contraseña:</h4>
+    <span class="condition" id="spec_char">Contener al menos un caracter especial</span><br>
+    <span class="condition" id="cap_letter">Tener al menos una letra mayúscula</span><br>
+    <span class="condition" id="char_length">Ser de al menos 8 caracteres</span><br>
+    <span class="condition" id="pass_eq">Ambas contraseñas coinciden</span><br>
+
+    </div>
+    <!--Scripts-->
+    <script src="password.js"></script>
+</body>
+</html>
