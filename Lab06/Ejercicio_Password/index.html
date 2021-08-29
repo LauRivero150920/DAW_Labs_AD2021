@@ -10,12 +10,17 @@
 </head>
 <body>
     <div id="pass_cont">
-    <h1 id="pass_title">Password</h1><br>
+    <h1 id="pass_title">Validador de Password</h1><br>
     <p class="pass_text">Ingrese contraseña:</p>
-    <input type="password" name="" id="pass1">
+    <input type="password" name="" id="pass1"><br>
+    <input type="checkbox" onclick="show_password1()">Show Password
+    <br><br>
     <p class="pass_text">Confirme contraseña:</p>
-    <input type="password" name="" id="pass2"><br><br>
-    <button id="pass_submit">Submit</button><br><br>
+    <input type="password" name="" id="pass2"><br>
+    <input type="checkbox" onclick="show_password2()">Show Password
+    <br><br>
+    <div id="strength_bar"></div><br>
+    <button id="pass_submit">Validar</button><br><br>
 
     <h4>Requerimientos de la contraseña:</h4>
     <span class="condition" id="spec_char">Contener al menos un caracter especial</span><br>

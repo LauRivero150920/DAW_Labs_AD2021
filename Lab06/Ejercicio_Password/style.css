@@ -15,3 +15,8 @@
 .condition{
     color: red;
 }
+
+#strength_bar{
+    text-align: left;
+    padding-left: 4px;
+}
