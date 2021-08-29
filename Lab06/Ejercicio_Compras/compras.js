@@ -60,7 +60,9 @@ function totals_p1(){
     subtotal += (prod1_dif * 200);
     iva += (prod1_dif *.16 * 200);
     total += (prod1_dif * 200) + (prod1_dif *.16 * 200);
-    
+
+    document.getElementById("shawn").innerHTML = "SM, Handwritten ------- " + prod1_purch + " piezas";
+
     document.getElementById("quantity").innerHTML = "Cantidad: " + total_products;
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
     document.getElementById("iva").innerHTML = "IVA: $" + iva;
@@ -75,6 +77,9 @@ function totals_p2(){
     subtotal += (prod2_dif * 250);
     iva += (prod2_dif *.16 * 250);
     total += (prod2_dif * 250) + (prod2_dif *.16 * 250);
+
+    document.getElementById("olivia").innerHTML = "OR, Sour ------- " + prod2_purch + " piezas";
+
     document.getElementById("quantity").innerHTML = "Cantidad: " + total_products;
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
     document.getElementById("iva").innerHTML = "IVA: $" + iva;
@@ -89,6 +94,9 @@ function totals_p3(){
     subtotal += (prod3_dif * 150);
     iva += (prod3_dif *.16 * 150);
     total += (prod3_dif * 150) + (prod3_dif *.16 * 150);
+
+    document.getElementById("score").innerHTML = "TS, ATLAS ------- " + prod3_purch + " piezas";
+
     document.getElementById("quantity").innerHTML = "Cantidad: " + total_products;
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
     document.getElementById("iva").innerHTML = "IVA: $" + iva;

@@ -44,13 +44,27 @@
 
 #total{
     width: 30%; 
-    margin-left: 35%;
+    margin-left: 19%;
+    margin-right: 2%;
     margin-top: 30px;
     border: 1px solid rgb(190, 187, 187);
     border-radius: 10px;
     padding: 1%;
     margin-bottom: 30px;
     font-size: 20px;
+    display: inline-block;
+}
+
+#summary{
+    width: 30%;
+    margin-top: 30px;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 10px;
+    padding: 1%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .disp{
@@ -64,4 +78,9 @@
 
 #shop_title{
     font-size: 60px;
+}
+
+#summary_title{
+    font-size: 20px;
+    font-weight: bold;
 }
