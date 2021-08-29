@@ -60,8 +60,14 @@ function totals_p1(){
     subtotal += (prod1_dif * 200);
     iva += (prod1_dif *.16 * 200);
     total += (prod1_dif * 200) + (prod1_dif *.16 * 200);
-
-    document.getElementById("shawn").innerHTML = "SM, Handwritten ------- " + prod1_purch + " piezas";
+    
+    if(prod1_purch > 0){
+        document.getElementById("shawn").innerHTML = "SM, Handwritten ------- " + prod1_purch + " piezas";
+    }
+    else{
+        document.getElementById("shawn").innerHTML = "";
+    }
+    
 
     document.getElementById("quantity").innerHTML = "Cantidad: " + total_products;
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
@@ -77,8 +83,14 @@ function totals_p2(){
     subtotal += (prod2_dif * 250);
     iva += (prod2_dif *.16 * 250);
     total += (prod2_dif * 250) + (prod2_dif *.16 * 250);
-
-    document.getElementById("olivia").innerHTML = "OR, Sour ------- " + prod2_purch + " piezas";
+    
+    if(prod2_purch > 0){
+        document.getElementById("olivia").innerHTML = "OR, Sour ------- " + prod2_purch + " piezas";
+    }
+    else{
+        document.getElementById("olivia").innerHTML = "";
+    }
+    
 
     document.getElementById("quantity").innerHTML = "Cantidad: " + total_products;
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
@@ -94,8 +106,12 @@ function totals_p3(){
     subtotal += (prod3_dif * 150);
     iva += (prod3_dif *.16 * 150);
     total += (prod3_dif * 150) + (prod3_dif *.16 * 150);
-
-    document.getElementById("score").innerHTML = "TS, ATLAS ------- " + prod3_purch + " piezas";
+    
+    if(prod3_purch > 0){
+        document.getElementById("score").innerHTML = "TS, ATLAS ------- " + prod3_purch + " piezas";    }
+    else{
+        document.getElementById("score").innerHTML = "";
+    }
 
     document.getElementById("quantity").innerHTML = "Cantidad: " + total_products;
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
@@ -108,10 +124,10 @@ document.getElementById("prod1_quant").onclick = purchased_product1;
 document.getElementById("prod2_quant").onclick = purchased_product2;
 document.getElementById("prod3_quant").onclick = purchased_product3;
 
-document.getElementById("quantity").innerHTML = "Cantidad: ";
-document.getElementById("subtotal").innerHTML = "Subtotal: $";
-document.getElementById("iva").innerHTML = "IVA: $";
-document.getElementById("total_iva").innerHTML = "TOTAL: $";
+document.getElementById("quantity").innerHTML = "Cantidad: 0";
+document.getElementById("subtotal").innerHTML = "Subtotal: $0";
+document.getElementById("iva").innerHTML = "IVA: $0";
+document.getElementById("total_iva").innerHTML = "TOTAL: $0";
 
 document.getElementById("prod1_shop").onclick = totals_p1;
 document.getElementById("prod2_shop").onclick = totals_p2;
