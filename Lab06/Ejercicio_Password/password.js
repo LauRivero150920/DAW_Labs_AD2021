@@ -50,15 +50,10 @@ function special_character(password_1){
     return spec_flag;
 }
 
-function upper_case(password_1){ //!A
+function upper_case(password_1){
     for(let i = 0; i < password_1.length; i++){
-        if(password_1.charAt(i) === password_1.charAt(i).toUpperCase() && isNaN(password_1.charAt(i))){
-            if(spec_flag == true){
-                return false;
-            }
-            else{
-                return true;
-            }
+        if(password_1.charAt(i) >= 'A' && password_1.charAt(i) <= 'Z' && isNaN(password_1.charAt(i)) && password_1.charAt(i) === password_1.charAt(i).toUpperCase()) {
+            return true;
         }
     }
 }
@@ -83,12 +78,6 @@ function password_strength(){
     }
     else{
         document.getElementById("char_length").style.color = "red";
-        if(total_stength > 0){
-            total_stength--;
-        }
-        else{
-            total_stength = 0;
-        }
     }
 
     if(upper_case(password_1)){
@@ -97,12 +86,6 @@ function password_strength(){
     }
     else{
         document.getElementById("upper_case").style.color = "red";
-        if(total_stength > 0){
-            total_stength--;
-        }
-        else{
-            total_stength = 0;
-        }
     }
 
     if(has_number(password_1)){
@@ -111,12 +94,6 @@ function password_strength(){
     }
     else{
         document.getElementById("num").style.color = "red";
-        if(total_stength > 0){
-            total_stength--;
-        }
-        else{
-            total_stength = 0;
-        }
     }
 
     if(special_character(password_1)){
@@ -125,12 +102,6 @@ function password_strength(){
     }
     else{
         document.getElementById("spec_char").style.color = "red";
-        if(total_stength > 0){
-            total_stength--;
-        }
-        else{
-            total_stength = 0;
-        }
     }
 
     if(equal_passwords(password_1, password_2)){
@@ -141,7 +112,7 @@ function password_strength(){
     }
 
     console.log(total_stength);
-    if(total_stength === 0){
+    if(total_stength === 1){
         document.getElementById("strength_bar").innerHTML = "Low";
         document.getElementById("strength_bar").style.width = "7%";
         document.getElementById("strength_bar").style.backgroundColor = "red";
@@ -149,7 +120,7 @@ function password_strength(){
         document.getElementById("strength_bar").style.color = "white";
         document.getElementById("strength_bar").style.marginLeft = "39.5%";
     }
-    else if(total_stength > 0 && total_stength < 3){
+    else if(1 < total_stength  && total_stength <= 3){
         document.getElementById("strength_bar").innerHTML = "Medium";
         document.getElementById("strength_bar").style.width = "14%";
         document.getElementById("strength_bar").style.backgroundColor = "yellow";
@@ -157,7 +128,7 @@ function password_strength(){
         document.getElementById("strength_bar").style.color = "black";
         document.getElementById("strength_bar").style.marginLeft = "40%";
     }
-    else if(total_stength > 3){
+    else if(total_stength >= 3){
         document.getElementById("strength_bar").innerHTML = "Secure!";
         document.getElementById("strength_bar").style.width = "20%";
         document.getElementById("strength_bar").style.backgroundColor = "green";
