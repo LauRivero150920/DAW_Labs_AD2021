@@ -16,7 +16,7 @@ body{
 .product{
     
     display: inline-block;
-    margin: 5px;
+    margin: 2px;
     vertical-align: top;
     text-align: center;
     border: 1px solid rgb(190, 187, 187);
