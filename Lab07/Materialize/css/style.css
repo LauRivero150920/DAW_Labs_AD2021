@@ -1,0 +1,34 @@
+body{
+    background-color: #3F51B5;
+    color: #FFFFFF;
+}
+
+.nav-wrapper{
+    background-color: #303F9F;
+}
+
+.brand-logo{
+    margin-left: 5%;
+}
+
+#image_container{
+    width: 90%;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.image_back_port{
+    margin:10px;
+}
+
+#port_title{
+    text-align: center;
+}
+
+.row{
+    display: flex;
+}
+
+p{
+    color: #212121;
+}
