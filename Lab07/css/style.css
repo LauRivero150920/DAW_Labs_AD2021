@@ -1,0 +1,106 @@
+
+body{
+    background-color: black;
+    color: white;
+}
+#shop_cont{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#shop_title{
+    text-align: center;
+}
+
+.product{
+    
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+    text-align: center;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 2%;
+    padding: 5px;
+}
+
+.product:hover{
+    border: 3px solid #4dc4cc;
+    border-radius: 7px;
+    box-shadow: 0px 0px 20px #4dc4cc; 
+    background-color: rgb(73, 69, 69);
+}
+.prod_image{
+    width: 70%;
+}
+
+.prod_quant{
+    margin-left: 40%;
+    width: 20%;
+    text-align: center;
+}
+
+#prod1_shop{
+    border-radius: 7px;
+}
+
+#prod2_shop{
+    border-radius: 7px;
+}
+
+#prod3_shop{
+    border-radius: 7px;
+}
+
+
+#total{
+
+    margin-top: 30px;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 10px;
+    padding: 1%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    padding: 5%;
+}
+
+#summary{
+    margin-top: 30px;
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 10px;
+    padding: 1%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    vertical-align: top;
+    padding: 5%;
+}
+
+.disp{
+    color:white;
+    background-color: rgb(10, 148, 28);
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#shop_title{
+    font-size: 60px;
+}
+
+#summary_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prod_title{
+    font-size: 30px;
+}
+
+#summary_container{
+    width: 70%;
+}
+
+label{
+    color: white;
+}
