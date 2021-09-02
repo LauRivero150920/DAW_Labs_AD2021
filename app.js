@@ -12,3 +12,12 @@ const file_system = require('fs');
 
 // file_system.writeFileSync("archivo", "texto");
 file_system.writeFileSync("comida.txt", "Maruchan");
+
+// Código asíncrono
+const arreglo = [3000,114,5,232,1224,67,2344,2434];
+
+for(let item of arreglo){
+    setTimeout(() =>{ 
+        console.log(item);
+    },item);
+}
