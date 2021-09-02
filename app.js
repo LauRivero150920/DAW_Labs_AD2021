@@ -21,3 +21,18 @@ for(let item of arreglo){
         console.log(item);
     },item);
 }
+
+// Servidor web
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+    console.log(request.url);
+    //response.setHeader('Content-Type', 'text/html');
+    response.setHeader('Content-Type', 'text/html');
+    // se debe poner para que se despliegue el poderosisimo html
+    response.write("<h1>hola mundo</h1>")
+    response.end();
+});
+
+// Puerto con el que vamos a esuchar las peticiones
+server.listen(3000);
