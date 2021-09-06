@@ -25,13 +25,19 @@ for(let item of arreglo){
 // Servidor web
 const http = require('http');
 
+const platillos = [
+    {nombre: "sopes", descripcion: "tortilla, frijol, queso, salsa, pollo"},
+    {nombre: "chilaquiles", descripcion: "tortillas, salsa, frijol, queso, pollo"},
+    {nombre: "tacos", descripcion: "tortilla, carne, salsa"},
+    {nombre: "pambazo", descripcion: "bolillo con carne remojado en salsa"}
+];
+
 const server = http.createServer((request, response) => {
     console.log(request.url);
     //response.setHeader('Content-Type', 'text/html');
     //response.setHeader('Content-Type', 'text/html');
     // se debe poner para que se despliegue el poderosisimo html
     //response.write("<h1>hola mundo</h1>")
-    
 
     // Reaccionar de acuerdo a la ruta
     if(request.url === "/hola"){
@@ -46,13 +52,6 @@ const server = http.createServer((request, response) => {
     }
     else if(request.url === "/menu"){
         // Mostrar la lista de platillos
-        const platillos = [
-            {nombre: "sopes", descripcion: "tortilla, frijol, queso, salsa, pollo"},
-            {nombre: "chilaquiles", descripcion: "tortillas, salsa, frijol, queso, pollo"},
-            {nombre: "tacos", descripcion: "tortilla, carne, salsa"},
-            {nombre: "pambazo", descripcion: "bolillo con carne remojado en salsa"}
-        ];
-
         response.statusCode = 200;
         response.setHeader('Content-Type', 'text/html');
         response.write('<head><meta charset="UTF-8"></head>');
@@ -65,23 +64,53 @@ const server = http.createServer((request, response) => {
         response.write('<a href = "menu/add">Agregar platillo </a>');
         response.end();
     }
-    else if(request.url === "/menu/add"){
+    else if(request.url === "/menu/add" && request.method === "GET"){
         // Agregar un platillo a la lista
+        console.log(request.method);
         response.setHeader('Content-Type', 'text/html');
         response.write('<head><meta charset="UTF-8"></head>');
         response.write('<h1>Agregar platillo al Menú</h1>');
-        response.write('<form action = "/menu/add" method = "POST">');
+        response.write('<form action="/menu/add" method="POST">');
         response.write('<label for="nombre">Nombre del platillo: </label>');
-        response.write('<input type="text" id="nombre" name= "nombre" placeholder="tacos" required>');
+        response.write('<input type="text" id="nombre" name="nombre" placeholder="tacos" required>');
         response.write('<br/>');
         response.write('<br/>');
         response.write('<label for="descripcion">Descripción del platillo: </label>');
         response.write('<input type="text" id="descripcion" name= "descripcion" placeholder="ingredientes: azucar, flores y muchos colores">');
         response.write('<br/>');
         response.write('<br/>');
-        response.write('<input type="submit" id="enviar" name="enviar" value = "Enviar"');
+        response.write('<input type="submit" id="enviar" name="enviar" value="Enviar"');
         response.write('</form>');
-        response.write("<ul>");
+        response.end();
+    }
+    else if(request.url === "/menu/add" && request.method === "POST"){
+        console.log(request.method);
+        // Recibir datos del cliente
+        const datos = [];
+        request.on('data', (dato) =>{
+            console.log(dato);
+            datos.push(dato);
+        });
+        console.log(datos);
+
+        // Procesar datos del cliente
+        return request.on('end', () =>{
+            const datos_completos = Buffer.concat(datos).toString();
+            console.log(datos);
+            console.log(datos_completos);
+            const nombre = datos_completos.split('=')[1].split('&')[0];
+            const descripcion = datos_completos.split('=')[2].split('&')[2];
+            console.log(nombre);
+            console.log(descripcion);
+
+            // Agregar platillos
+            platillos.push({nombre: nombre, descripcion:descripcion});
+
+            // Redirección Hacia menú
+            response.statusCode = 302;
+            response.setHeader('Location', '/menu');
+        });
+        
     }
     else{
         response.statusCode = 404;
