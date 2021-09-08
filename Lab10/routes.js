@@ -123,6 +123,14 @@ const requestHandler = (request, response) => {
             // Agregar animalitos
             animalitos.push({nombre: nombre, pais:pais});
 
+            // Guardar datos en archivo de texto
+            let fs = require('fs')
+            let logger = fs.createWriteStream('animalitos.txt', {
+            flags: 'a'
+            });
+
+            logger.write("nombre: " + nombre + ", País: " +  pais + "\n"); // append string to your file
+
             // Redirección Hacia menú
             response.statusCode = 302;
             response.setHeader('Location', '/datoooss');

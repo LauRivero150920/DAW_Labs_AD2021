@@ -1,0 +1,5 @@
+nombre: Husky, País: Siberia
+nombre: Jirafa, País: Zimbabwe
+nombre: Pinguino, País: Antartida
+nombre: Mapache, País: M%C3%A9xico
+nombre: Mapache, País: Mexico
