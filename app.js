@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express();
 
+const bodyParser = require('body-parser');
+
 //Middleware
 
 /*app.use( (request, response,next) => {
     next(); // Solo avanza al siguiente middleware
 });*/
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use((request, response, next) => {
     console.log('Primer Middleware!');
+    console.log(request.body);
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
@@ -29,7 +33,7 @@ app.use('/ruta', (request, response, next) => {
 
 app.use((request, response, next) => {
     console.log('Segundo middleware!');
-    response.send('¡Hola mundoooooo!'); //Manda la respuesta
+    response.send('Error 404'); //Manda la respuesta
 });
 
 app.listen(3000);
