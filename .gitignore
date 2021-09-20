@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Node artifact files
+node_modules/
+dist/

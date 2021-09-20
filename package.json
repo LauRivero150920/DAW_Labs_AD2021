@@ -1,0 +1,26 @@
+{
+  "name": "hola_mundo",
+  "version": "1.0.0",
+  "description": "Laboratorios del bloque 1 Ago-Dic 2021",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LauRivero150920/DAW_Labs_AD2021.git"
+  },
+  "keywords": [
+    "daw"
+  ],
+  "author": "Lau Rivero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LauRivero150920/DAW_Labs_AD2021/issues"
+  },
+  "homepage": "https://github.com/LauRivero150920/DAW_Labs_AD2021#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
