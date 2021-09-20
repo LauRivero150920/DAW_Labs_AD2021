@@ -12,6 +12,11 @@ app.use((request, response, next) => {
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
+app.use('/ruta', (request, response, next) => {
+    console.log('Segundo middleware! (ruta)');
+    response.send('Respuesta de la ruta "/ruta"'); 
+});
+
 app.use((request, response, next) => {
     console.log('Segundo middleware!');
     response.send('¡Hola mundoooooo!'); //Manda la respuesta
