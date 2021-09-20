@@ -2,14 +2,19 @@ const express = require('express');
 const app = express();
 
 //Middleware
+
+/*app.use( (request, response,next) => {
+    next(); // Solo avanza al siguiente middleware
+});*/
+
 app.use((request, response, next) => {
-    console.log('Middleware!');
+    console.log('Primer Middleware!');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
 app.use((request, response, next) => {
-    console.log('Otro middleware!');
-    response.send('¡Hola mundo!'); //Manda la respuesta
+    console.log('Segundo middleware!');
+    response.send('¡Hola mundoooooo!'); //Manda la respuesta
 });
 
 app.listen(3000);
