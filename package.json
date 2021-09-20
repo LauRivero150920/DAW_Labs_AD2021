@@ -22,5 +22,8 @@
   "homepage": "https://github.com/LauRivero150920/DAW_Labs_AD2021#readme",
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
