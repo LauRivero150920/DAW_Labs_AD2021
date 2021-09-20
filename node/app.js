@@ -16,7 +16,7 @@ for(let item of arreglo){
 */
 // Servidor web
 const http = require('http');
-const routes = require('./routes');
+const routes = require('./node/routes');
 
 const server = http.createServer(routes);
 
