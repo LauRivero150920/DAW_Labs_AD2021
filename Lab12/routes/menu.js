@@ -24,5 +24,17 @@ router.get('/rutatriste', (request, response, next) => {
     response.send(respuesta_triste);
 });
 
+router.get('/preguntas', (request, response, next) => {
+    let respuesta_triste = '<head><meta charset="UTF-8"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>';
+    respuesta_triste += '<body style="background-color: #aee7f5; color: black; text-align:center">';
+    respuesta_triste += '<br>';
+    respuesta_triste += '<h1>Preguntas</h1>';
+    respuesta_triste += '<h3>Describe el archivo package.json.</h3>';
+    respuesta_triste += '<span>archivo de definición o manifiesto para nuestro proyecto, en el cual especificamos referencias al proyecto como: autor, repositorio, versión y sobre todo las dependencias, entre otros.</span>';
+    respuesta_triste += '<br><br>';
+    respuesta_triste += '</body>';
+    response.send(respuesta_triste);
+});
+
 
 module.exports = router;
