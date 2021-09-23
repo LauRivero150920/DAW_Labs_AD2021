@@ -42,52 +42,27 @@
 
         <!--Start Cards-->
         <div class="row">
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="https://static.scientificamerican.com/espanol/cache/file/050D641B-C40F-460A-B892534B0024CB3C_source.jpg?w=590&h=800&4147C8A7-B3A4-4126-9293322177AC2D1C">
+            <% if (lista_platillos.length > 0) { %>
+                <% for (let platillo of lista_platillos) { %>
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="<%= platillo.imagen%>">
+                            </div>
+                            <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4"><%= platillo.nombre%><i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">This is a link</a></p>
+                            </div>
+                            <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><%= platillo.nombre%><i class="material-icons right">close</i></span>
+                            <p><%= platillo.descripcion %></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="https://ichef.bbci.co.uk/news/640/cpsprodpb/169F6/production/_91026629_gettyimages-519508400.jpg">
-                    </div>
-                    <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="https://mymodernmet.com/wp/wp-content/uploads/2021/04/how-to-draw-a-panda-fb-thumbnail-1.jpg">
-                    </div>
-                    <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
+                <% } %>
+            <% }else{ %>
+                <h1>AHHHHHHHH</h1>
+            <% } %>
         </div>
         <!--End cards-->
 
