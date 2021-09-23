@@ -2,6 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
+router.get('/list', (request, response, next) => {
+    response.render('lista_menu');
+});
+
 router.get('/add', (request, response, next) => {
     let respuesta = '<head><meta charset="UTF-8"></head>';
     respuesta += '<h1>Agregar platillo al menú</h1>';

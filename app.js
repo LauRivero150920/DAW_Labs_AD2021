@@ -7,6 +7,9 @@ const rutasMenu = require('./routes/menu');
 const path = require('path');
 
 //Middleware
+app.set('view engine', 'ejs');  // Le da el valor de 'ejs' al engine para que sepa que debe usar ese
+app.set('views', 'views');      // Configuramos la carpeta views para que ejs busque ahí los templates
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
