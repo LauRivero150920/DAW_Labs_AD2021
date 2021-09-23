@@ -4,8 +4,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const rutasMenu = require('./routes/menu');
 
+const path = require('path');
+
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.get('/index', (request, response, next) => {
+    response.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
 
 app.use('/menu', rutasMenu);
 
