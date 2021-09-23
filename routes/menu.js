@@ -3,7 +3,9 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/list', (request, response, next) => {
-    response.render('lista_menu');
+    response.render('lista_menu',  {
+        titulo: "Menu"
+    });
 });
 
 router.get('/add', (request, response, next) => {
