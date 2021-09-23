@@ -7,6 +7,8 @@ const rutasMenu = require('./routes/menu');
 const path = require('path');
 
 //Middleware
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/index', (request, response, next) => {
