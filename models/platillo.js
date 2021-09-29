@@ -17,11 +17,11 @@ module.exports = class platillo {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        
+        platillos.push(this);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        
+        return platillos;
     }
 }

@@ -1,7 +1,9 @@
+const Platillo = require('../models/platillo');
+
 exports.getList = (request, response, next) => {
     response.render('lista_menu',  {
         titulo: "Menu",
-        lista_platillos: platillos
+        lista_platillos: Platillo.fetchAll()
     });
 };
 
