@@ -1,0 +1,25 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+        <main class="container">
+            <h1><%= titulo %></h1>
+        </main>
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <form action="/menu/add" method="POST">
+                    <label for="nombre">Nombre de platillo: </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="tacos" required>
+                    <br/>
+                    <br/>
+                    <label for="descripcion">Descripción del platillo: </label>
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Este platillo es delicioso, lleva...">
+                    <br/>
+                    <br/>
+                    <input type="submit" id="enviar" name="enviar" value="Enviar">
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
+        <script>M.AutoInit();</script>
+    </body>
+    <%- include('includes/footer.ejs') %>
+</html>
