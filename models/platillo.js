@@ -11,7 +11,7 @@ module.exports = class platillo {
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(mi_nombre, mi_descripcion, mi_imagen) {
         this.nombre = mi_nombre;
-        this,descripcion = mi_descripcion;
+        this.descripcion = mi_descripcion;
         this.imagen = mi_imagen;
     }
 

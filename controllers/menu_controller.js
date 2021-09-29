@@ -26,5 +26,7 @@ exports.getAdd = (request, response, next) => {
 
 exports.postAdd = (request, response, next) => {
     // console.log(request.body.nombre);
+    const platillo = new Platillo(request.body.nombre, request.body.descripcion, "https://dam.cocinafacil.com.mx/wp-content/uploads/2020/04/comida-china-tipica.jpg");
+    platillo.save();
     response.send("Gracias por contribuir con el menú");
 };
