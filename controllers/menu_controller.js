@@ -8,7 +8,6 @@ exports.getList = (request, response, next) => {
 };
 
 exports.getAdd = (request, response, next) => {
-    
     response.render('add_menu',{
         titulo: "Agregar Platillo al Menú",
     });
