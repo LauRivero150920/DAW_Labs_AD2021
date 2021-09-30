@@ -18,7 +18,7 @@ exports.getAdd = (request, response, next) => {
 };
 
 exports.postAdd = (request, response, next) => {
-    response.setHeader('Set-Cookie', 'ultimo_platillo='+request.body.nombre);
+    response.setHeader('Set-Cookie', 'ultimo_platillo='+request.body.nombre+';HttpOnly');
     const platillo = new Platillo(request.body.nombre, request.body.descripcion, "https://dam.cocinafacil.com.mx/wp-content/uploads/2020/04/comida-china-tipica.jpg");
     platillo.save();
     response.status(302).redirect('/menu/list');
