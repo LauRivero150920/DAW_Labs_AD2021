@@ -1,0 +1,26 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div id="contacto">
+                <h2 class="sub-title">Contacto</h2>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label"><h4>Nombre</h4></label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Raiza de la Torre">
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label"><h4>Correo</h4></label>
+                    <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contraseña" class="form-label"><h4>Mensaje</h4></label>
+                    <textarea class="form-control" id="contraseña" rows="10"></textarea>
+                </div>
+                <a class="waves-effect waves-light btn" href="inicio.html" id="button"><i class="material-icons left">send</i>Enviar</a>
+            </div>
+            <br><br>
+        </div>
+    </div>
+</body>
+<%- include('includes/footer.ejs') %>
+</html>

@@ -1,0 +1,39 @@
+body{
+    text-align: center;
+    background-color: #faf8e8;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.sub-title, h1{
+    font-weight: bold;
+    color: #D4E09B;
+    font-size: 70px;
+}
+
+.paragraph{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.nav-wrapper{
+    background-color: #8D86;    ;
+    font-family: 'Varela Round', sans-serif;
+}
+
+label{
+    font-family: 'Varela Round', sans-serif;
+    text-align: left;
+}
+
+span{
+    vertical-align: middle;
+}
+
+#button{
+    background-color: #aac597;
+}
+
+.page-footer{
+    background-color: #C59A7A;    ;
+    font-family: 'Varela Round', sans-serif;
+}
