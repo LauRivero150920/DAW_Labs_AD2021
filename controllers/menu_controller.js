@@ -1,7 +1,7 @@
 const Platillo = require('../models/platillo');
 
 exports.getList = (request, response, next) => {
-    Platillo.fetchAll()
+    Platillo.fetchAll(request.params.platillo_id)
         .then(([rows, fieldData]) => {
             console.log(rows);
             response.render('lista_menu',  {

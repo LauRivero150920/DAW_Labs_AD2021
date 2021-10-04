@@ -25,7 +25,13 @@ module.exports = class platillo {
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
-    static fetchAll() {
-        return db.execute('SELECT * FROM platillos');
+    static fetchAll(id) {
+        if(id === undefined){
+            return db.execute('SELECT * FROM platillos');
+        }
+        else{
+            return db.execute('SELECT * FROM platillos WHERE id = ?', [id]);
+        }
+        
     }
 }
