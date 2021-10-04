@@ -1,3 +1,5 @@
+const db = require('../util/database');
+
 const platillos = [
     {nombre: "sopes", descripcion: "tortilla, pollo, queso", imagen: "https://t1.rg.ltmcdn.com/es/images/8/2/6/sopes_de_picadillo_74628_orig.jpg"},
     {nombre: "carne asada", descripcion: "rica carne al carbón", imagen: "https://d37k6lxrz24y4c.cloudfront.net/v2/es-mx/e9dc924f238fa6cc29465942875fe8f0/537b85de-8565-4a2e-91f3-b1e4d7f221bc-600.jpg"},
@@ -17,11 +19,13 @@ module.exports = class platillo {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        platillos.push(this);
+        return db.execute('INSERT INTO platillos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
+            [this.nombre, this.descripcion, this.imagen]
+        );
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return platillos;
+        return db.execute('SELECT * FROM platillos');
     }
 }

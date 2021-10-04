@@ -9,13 +9,13 @@ let password = '';
 
 if(BD ===  "DEV"){
     host = 'localhost';
-    user = 'roor';
+    user = 'root';
     database = 'comida';
     password = '';
 }
 else if(BD === "PROD"){
     host = 'localhost';
-    user = 'roor';
+    user = 'root';
     database = 'comida';
     password = 'fewfednvjerwf243dkmsjvf4_#_#nrehufiwodjskc12342jnfwejdioskmncdj';
 }
