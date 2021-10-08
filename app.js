@@ -18,7 +18,7 @@ app.get('/index', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-app.use('/menu', rutasMenu); //TODO: Si quito /menu y lo cambio por /
+app.use('/menu', rutasMenu);
 
 app.use((request, response, next) => {
     console.log('Primer Middleware!');
