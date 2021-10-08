@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 const rutasMenu = require('./routes/menu');
 
 const path = require('path');
@@ -13,10 +15,11 @@ app.set('views', 'views');      // Configuramos la carpeta views para que ejs bu
 app.use(express.static(path.join(__dirname, 'public'))); 
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
-app.get('/index', (request, response, next) => {
+/*app.get('/index', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
+});*/
 
 app.use('/menu', rutasMenu);
 

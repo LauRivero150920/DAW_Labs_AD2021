@@ -2,7 +2,8 @@ const Platillo = require('../models/platillo');
 
 exports.getList = (request, response, next) => {
     console.log(request.get('Cookie'));
-    console.log(request.get('Cookie').split(';')[0].trim().split('=')[1]);
+    console.log(request.cookies);
+    console.log(request.cookies.ultimo_platillo);
     response.render('lista_menu',  {
         titulo: "Menu",
         lista_platillos: Platillo.fetchAll(),
