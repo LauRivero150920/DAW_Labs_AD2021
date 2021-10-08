@@ -10,7 +10,7 @@ const path = require('path');
 app.set('view engine', 'ejs');  // Le da el valor de 'ejs' al engine para que sepa que debe usar ese
 app.set('views', 'views');      // Configuramos la carpeta views para que ejs busque ahí los templates
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); 
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -18,7 +18,7 @@ app.get('/index', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-app.use('/menu', rutasMenu);
+app.use('/menu', rutasMenu); //TODO: Si quito /menu y lo cambio por /
 
 app.use((request, response, next) => {
     console.log('Primer Middleware!');

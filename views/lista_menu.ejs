@@ -1,50 +1,49 @@
 <%- include('includes/head.ejs') %>
-<%- include('includes/nav.ejs') %>
+    <%- include('includes/nav.ejs') %>
         <main class="container">
-            <h1><%= titulo %></h1>
-            <p>contenedor</p>
-            <!-- Dropdown Trigger -->
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1' id="button_drop">Drop Me!</a><br><br>
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!" style="color: #03A9F4;">one</a></li>
-                <li><a href="#!" style="color: #03A9F4;">two</a></li>
-                <li class="divider" tabindex="-1"></li>
-                <li><a href="#!" style="color: #03A9F4;">three</a></li>
-                <li><a href="#!" style="color: #03A9F4;"><i class="material-icons">view_module</i>four</a></li>
-                <li><a href="#!" style="color: #03A9F4;"><i class="material-icons">cloud</i>five</a></li>
-            </ul>
-            
+            <h1 style="text-align: center;">
+                <%= titulo %>
+            </h1>
         </main>
 
         <!--Start Cards-->
         <div class="row">
-            <% if (lista_platillos.length > 0) { %>
+            <% if (lista_platillos.length> 0) { %>
                 <% for (let platillo of lista_platillos) { %>
                     <div class="col s12 m6 l4">
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="<%= platillo.imagen%>">
+                                <img class="activator" src="<%= platillo.imagen%>" style="height: 250px;">
                             </div>
                             <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4"><%= platillo.nombre%><i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">This is a link</a></p>
+                                <span class="card-title activator grey-text text-darken-4">
+                                    <%= platillo.nombre%><i class="material-icons right">more_vert</i>
+                                </span>
+                                <p>
+                                    <a href="#">This is a link</a>
+                                </p>
                             </div>
                             <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4"><%= platillo.nombre%><i class="material-icons right">close</i></span>
-                            <p><%= platillo.descripcion %></p>
+                                <span class="card-title grey-text text-darken-4">
+                                    <%= platillo.nombre%>
+                                        <i class="material-icons right">close</i>
+                                </span>
+                                <p>
+                                    <%= platillo.descripcion %>
+                                </p>
                             </div>
                         </div>
                     </div>
-                <% } %>
-            <% }else{ %>
-                <h1>AHHHHHHHH</h1>
-            <% } %>
+                    <% } %>
+                        <% }else{ %>
+                            <h1>AHHHHHHHH</h1>
+                            <% } %>
         </div>
         <!--End cards-->
-    <!--JavaScript at end of body for optimized loading-->
+        <!--JavaScript at end of body for optimized loading-->
         <script type="text/javascript" src="/js/materialize.min.js"></script>
         <script>M.AutoInit();</script>
-    </body>
-    <%- include('includes/footer.ejs') %>
-</html>
+        </body>
+        <%- include('includes/footer.ejs') %>
+
+            </html>
