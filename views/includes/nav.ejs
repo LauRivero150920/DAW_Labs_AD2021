@@ -2,8 +2,16 @@
     <div class="nav-wrapper">
         <a href="/menu/list" class="brand-logo center">Menú</a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="/menu/add">Agregar Platillo</a></li>
-            <li><a href="/users/login">Iniciar Sesion</a></li>
+            <% if(isLoggedIn){%>
+                <li><a href="/menu/add">Agregar Platillo</a></li>
+                <li><a href="/users/logout">Cerrar Sesion</a></li>
+                <li style="font-weight: bold">Hola <%= username %></li>
+            <%} else {%>
+                <li><a href="/users/login">Iniciar Sesion</a></li>
+            <% } %>
+            
         </ul>
     </div>
 </nav>
+<body>
+    

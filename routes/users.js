@@ -9,7 +9,7 @@ router.get('/login', usersController.getLogin);
 
 router.post('/login', usersController.postLogin);
 
-//router.get('/add', usersController.getAdd);
+router.get('/logout', usersController.getLogout);
 
 //router.post('/add', usersController.postAdd);
 

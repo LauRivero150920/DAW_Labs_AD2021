@@ -1,11 +1,14 @@
+const session = require('express-session');
 const Platillo = require('../models/platillo');
 
 exports.getList = (request, response, next) => {
-    console.log(request.get('Cookie'));
-    console.log(request.cookies);
-    console.log(request.cookies.ultimo_platillo);
+    // console.log(request.get('Cookie'));
+    // console.log(request.cookies);
+    // console.log(request.cookies.ultimo_platillo);
     response.render('lista_menu',  {
         titulo: "Menu",
+        isLoggedIn: request.session.isLoggedIn,
+        username: request.session.username,
         lista_platillos: Platillo.fetchAll(),
     })
 };
@@ -13,6 +16,8 @@ exports.getList = (request, response, next) => {
 exports.getAdd = (request, response, next) => {
     response.render('add_menu',{
         titulo: "Agregar Platillo al Menú",
+        isLoggedIn: request.session.isLoggedIn,
+        username: request.session.username,
     });
 };
 
