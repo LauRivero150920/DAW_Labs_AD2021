@@ -1,16 +1,16 @@
 const express = require('express');
 
-const usersController = require('../controllers/menu_controller');
+const usersController = require('../controllers/users_controller');
 
 const router = express.Router();
 
 // De lo particular a lo general 
-router.get('/login', usersController.getList);
+router.get('/login', usersController.getLogin);
 
-router.post('/login', usersController.getList);
+router.post('/login', usersController.postLogin);
 
-router.get('/add', usersController.getAdd);
+//router.get('/add', usersController.getAdd);
 
-router.post('/add', usersController.postAdd);
+//router.post('/add', usersController.postAdd);
 
 module.exports = router;
