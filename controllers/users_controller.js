@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 exports.getLogin = (request, response, next) => {
     response.render('login',  {
-        titulo: "Iniciar Sesion",
+        titulo: "Iniciar Sesión",
         isLoggedIn: request.session.isLoggedIn,
         username: request.session.username,
     })
@@ -30,7 +30,7 @@ exports.postLogin = (request, response, next) => {
     })
     .catch(err => {
         console.log(err);
-        console.log("no se eonctró el usuario");
+        console.log("no se encontró el usuario");
         response.status(302).redirect('/users/login');
     }); 
 };
