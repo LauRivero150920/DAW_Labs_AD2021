@@ -7,11 +7,11 @@ exports.getList = (request, response, next) => {
     // console.log(request.cookies);
     // console.log(request.cookies.ultimo_platillo);
     //* Fetch all de modelo platillo, recuperar todos los platillos
-    Platillo.fetchAll()
+    Platillo.fetchAll(request.params.platillo_id)
         .then(([rows, fieldData]) => {
-            console.log(rows);
+            // console.log(rows);
             response.render('lista_menu',  {
-                titulo: "Menu",
+                titulo: "Menú",
                 isLoggedIn: request.session.isLoggedIn,
                 username: request.session.username,
                 lista_platillos: rows,
@@ -35,6 +35,13 @@ exports.postAdd = (request, response, next) => {
     response.setHeader('Set-Cookie', 'ultimo_platillo='+request.body.nombre+ ';HttpOnly');
     const platillo = new Platillo(request.body.nombre, request.body.descripcion, 
         "https://dam.cocinafacil.com.mx/wp-content/uploads/2020/04/comida-china-tipica.jpg");
-    platillo.save();
-    response.status(302).redirect('/menu/list');
+    platillo.save()
+        .then(([rows, fieldData]) => {
+            response.status(302).redirect('/menu/list');
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).redirect('/error');
+        });
+    
 };

@@ -20,24 +20,18 @@ module.exports = class platillo {
     //* Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
         platillos.push(this);
-        /*
-        !return db.execute('INSERT INTO platillos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
-            ![this.nombre, this.descripcion, this.imagen]
-        !);
-        */
+        return db.execute('INSERT INTO platillos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
+            [this.nombre, this.descripcion, this.imagen]);
     }
 
     // Este método servirá para devolver los objetos del almacenamiento persistente.
     // Métodos estáticos utilizados para las consultas, no necesitan ser llamados a través de un objeto de la clase
     static fetchAll(id) {
-        return db.execute('SELECT * FROM platillos')
-        /*
-        !if(id === undefined){
-            !return db.execute('SELECT * FROM platillos');
-        !}
-        !else{
-            !return db.execute('SELECT * FROM platillos WHERE id = ?', [id]);
-        !}
-        */
+        if(id === undefined){
+            return db.execute('SELECT * FROM platillos');
+        }
+        else{
+            return db.execute('SELECT * FROM platillos WHERE id = ?', [id]);
+        }
     }
 }
