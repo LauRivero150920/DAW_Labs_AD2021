@@ -52,4 +52,8 @@ app.use((request, response, next) => {
     response.status(404).send('Recurso no encontrado');
 });
 
+app.use('/error', (request, response, next) => {
+    response.status(500).send('Internal Server Error');
+});
+
 app.listen(3000);
