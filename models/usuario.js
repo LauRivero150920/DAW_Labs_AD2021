@@ -12,8 +12,7 @@ module.exports = class Usuario {
     //* Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
         return db.execute('INSERT INTO usuarios (nombre, username, password) VALUES (?, ?, ?)',
-            [this.nombre, this.username, bcrypt.hashSync(this.password, 12)]
-        );
+            [this.nombre, this.username, bcrypt.hashSync(this.password, 12)]);
     }
 
     //* Este método servirá para devolver los objetos del almacenamiento persistente.
