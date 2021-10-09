@@ -1,4 +1,5 @@
 const Usuario = require('../models/usuario');
+const bcrypt = require('bcryptjs');
 
 exports.getLogin = (request, response, next) => {
     response.render('login',  {
@@ -9,10 +10,29 @@ exports.getLogin = (request, response, next) => {
 };
 
 exports.postLogin = (request, response, next) => {
-    request.session.username = request.body.username;
-    request.session.isLoggedIn = true;
-    console.log(request.session.username);
-    response.status(302).redirect('/menu/list');
+    Usuario.fetchOne(request.body.username)
+    .then(([rows, fieldData]) => {
+        bcrypt.compare(request.body.password, rows[0].password)
+            .then(doMatch => {
+                if (doMatch) {
+                    request.session.isLoggedIn = true;
+                    request.session.username = request.body.username;
+                    return request.session.save(err => {
+                        response.redirect('/menu/list');
+                    });
+                }
+                console.log("El usuario y la contraseña no existen");
+                response.status(302).redirect('/users/login');
+            }).catch(err => {
+                console.log("Ocurrió un error en la comparación");
+                response.status(302).redirect('/users/login');
+            });
+    })
+    .catch(err => {
+        console.log(err);
+        console.log("no se eonctró el usuario");
+        response.status(302).redirect('/users/login');
+    }); 
 };
 
 exports.getLogout = (request, response, next) => {
