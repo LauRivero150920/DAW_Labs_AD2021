@@ -1,40 +1,28 @@
-//? Intentar hacerlo con posgres (PGAdmin)
-const mysql = require('mysql2');
+const { Pool, Client } = require('pg')
 
-const BD = "DEV";
+const pool = new Pool({
+    host: '127.0.0.1',
+    user: 'postgres',
+    database: 'comida',
+    password: 'randybtr15',
+    port: 5432,
+})
+pool.query('SELECT NOW()', (err, res) => {
+    console.log(err, res)
+    pool.end()
+})
 
-let host = '';
-let user = '';
-let database = '';
-let password = '';
+const client = new Client({
+    host: '127.0.0.1',
+    user: 'postgres',
+    database: 'comida',
+    password: 'randybtr15',
+    port: 5432,
+})
 
+client.connect()
 
-//? Variables de entorno
-
-//* Fase de development (desarrollo)
-if(BD ===  "DEV"){
-    host = 'localhost';
-    user = 'root';
-    database = 'comida';
-    password = '';
-}
-
-//* Fase de producción, no debe estar versionada
-else if(BD === "PROD"){
-    host = 'localhost';
-    user = 'root';
-    database = 'comida';
-    password = 'fewfednvjerwf243dkmsjvf4_#_#nrehufiwodjskc12342jnfwejdioskmncdj';
-}
-
-//? Intentar hacerlo con posgres (PGAdmin)
-const pool = mysql.createPool({
-    host: host,
-    user: user,
-    database: database,
-    password: password,
-});
-
-//* Una función que ejecuta otra función y se queda esperando a que se cumpla lo prometido
-//* El código cumple su función normal hasta que se cumpla o no la promesa
-module.exports = pool.promise();
+client.query('SELECT NOW()', (err, res) => {
+    console.log(err, res)
+    client.end()
+})

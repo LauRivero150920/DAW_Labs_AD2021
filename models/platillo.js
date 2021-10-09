@@ -1,5 +1,5 @@
-const db = require('../util/database');
-
+const client = require('../util/database');
+import { db } from '../util/database'
 module.exports = class platillo {
     //* Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(mi_nombre, mi_descripcion, mi_imagen) {
@@ -10,7 +10,7 @@ module.exports = class platillo {
 
     //* Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        return db.execute('INSERT INTO platillos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
+        return client.query('INSERT INTO platillos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
             [this.nombre, this.descripcion, this.imagen]);
     }
 
@@ -18,10 +18,10 @@ module.exports = class platillo {
     // Métodos estáticos utilizados para las consultas, no necesitan ser llamados a través de un objeto de la clase
     static fetchAll(id) {
         if(id === undefined){
-            return db.execute('SELECT * FROM platillos ORDER BY nombre ASC');
+            return client.query('SELECT * FROM platillos ORDER BY nombre ASC');
         }
         else{
-            return db.execute('SELECT * FROM platillos WHERE id = ?', [id]);
+            return client.query('SELECT * FROM platillos WHERE id = ?', [id]);
         }
     }
 }
