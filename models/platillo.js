@@ -28,7 +28,7 @@ module.exports = class platillo {
     // Métodos estáticos utilizados para las consultas, no necesitan ser llamados a través de un objeto de la clase
     static fetchAll(id) {
         if(id === undefined){
-            return db.execute('SELECT * FROM platillos');
+            return db.execute('SELECT * FROM platillos ORDER BY nombre DESC');
         }
         else{
             return db.execute('SELECT * FROM platillos WHERE id = ?', [id]);

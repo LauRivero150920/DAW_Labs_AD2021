@@ -43,5 +43,4 @@ exports.postAdd = (request, response, next) => {
             console.log(err);
             response.status(302).redirect('/error');
         });
-    
 };
