@@ -11,6 +11,8 @@ router.post('/login', usersController.postLogin);
 
 router.get('/logout', usersController.getLogout);
 
-//router.post('/add', usersController.postAdd);
+router.get('/add', usersController.getAdd);
+
+router.post('/add', usersController.postAdd);
 
 module.exports = router;
