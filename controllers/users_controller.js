@@ -17,6 +17,7 @@ exports.postLogin = (request, response, next) => {
                 if (doMatch) {
                     request.session.isLoggedIn = true;
                     request.session.username = request.body.username;
+                    request.session.name = request.body.nombre;
                     return request.session.save(err => {
                         response.redirect('/menu/list');
                     });

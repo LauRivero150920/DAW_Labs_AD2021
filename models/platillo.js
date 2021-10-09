@@ -10,7 +10,6 @@ module.exports = class platillo {
 
     //* Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        platillos.push(this);
         return db.execute('INSERT INTO platillos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
             [this.nombre, this.descripcion, this.imagen]);
     }

@@ -1,6 +1,6 @@
 const express = require('express');
 
-const isAuth = require('../util/is-out');
+const isAuth = require('../middlewares/is-out');
 
 const usersController = require('../controllers/users_controller');
 
