@@ -6,14 +6,18 @@
             </h1>
             <div class="row">
                 <div class="col s12 m6 offset-m3 l4 offset-l4" >
-                    <form action="/menu/add" method="POST">
+                    <form action="/users/add" method="POST">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-                        <label for="nombre">Nombre de platillo: </label>
-                        <input type="text" id="nombre" name="nombre" placeholder="tacos" required>
+                        <label for="nombre">Nombre Completo: </label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Shawn Peter Raul Mendes" required>
                         <br/>
                         <br/>
-                        <label for="descripcion">Descripción del platillo: </label>
-                        <input type="text" id="descripcion" name="descripcion" placeholder="Este platillo es delicioso, lleva...">
+                        <label for="username">Nombre de usuario: </label>
+                        <input type="text" id="username" name="username" placeholder="shawn1998">
+                        <br/>
+                        <br/>
+                        <label for="password">Contraseña: </label>
+                        <input type="password" id="password" name="password" placeholder="************">
                         <br/>
                         <br/>
                         <input type="submit" id="enviar" name="enviar" value="Enviar">

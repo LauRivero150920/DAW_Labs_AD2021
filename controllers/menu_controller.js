@@ -24,6 +24,10 @@ exports.getList = (request, response, next) => {
 };
 
 exports.getAdd = (request, response, next) => {
+    if (!request.session.isLoggedIn) {
+        return response.redirect('/users/login');
+    }
+    //Resto del código de la ruta...
     response.render('add_menu',{
         titulo: "Agregar Platillo al Menú",
         isLoggedIn: request.session.isLoggedIn,
@@ -43,5 +47,4 @@ exports.postAdd = (request, response, next) => {
             console.log(err);
             response.status(302).redirect('/error');
         });
-    
 };

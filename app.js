@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
 const rutasMenu = require('./routes/menu');
 const rutasUsers = require('./routes/users');
 
@@ -28,6 +31,14 @@ app.use(session({
     //* Asegura que no se guarde una sesión para una petición que no lo necesita
     saveUninitialized: false, 
 }));
+
+//...Y después del código para inicializar la sesión... 
+app.use(csrfProtection); 
+
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
 
 /*app.get('/index', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'index.html'));
