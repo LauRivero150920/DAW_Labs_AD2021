@@ -4,13 +4,20 @@
             <h1 style="text-align: center;">
                 <%= titulo %>
             </h1>
+            <div class="input-field col l8">
+                <i class="material-icons prefix">search</i>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" id="_csrf">
+                <input type="text" id="buscar" name="buscar">
+                <label for="buscar">Buscar</label>
+            </div>
+            <br><br>
         </main>
-
         <!--Start Cards-->
-        <div class="row">
+        <div class="row" id="container_platillos">
             <% if (lista_platillos.length> 0) { %>
                 <% for (let platillo of lista_platillos) { %>
                     <div class="col s12 m6 l4">
+
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="<%= platillo.imagen%>" style="height: 250px;">
@@ -19,9 +26,6 @@
                                 <span class="card-title activator grey-text text-darken-4">
                                     <%= platillo.nombre%><i class="material-icons right">more_vert</i>
                                 </span>
-                                <p>
-                                    <a href="#">This is a link</a>
-                                </p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">
@@ -36,7 +40,7 @@
                     </div>
                     <% } %>
                     <% }else{ %>
-                        <h1 style="text-align: center;">AHHHHHHHH</h1>
+                        <h1 style="text-align: center;">No hay platillos en el menú</h1>
                         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <% } %>
         </div>
@@ -46,5 +50,57 @@
         <script>M.AutoInit();</script>
         </body>
         <%- include('includes/footer.ejs') %>
+        <script>
+            document.getElementById("buscar").oninput = () => {
+                // console.log(document.getElementById("buscar").value);
+                const csrf = document.getElementById('_csrf').value;
 
+                //función que manda la petición asíncrona
+                fetch('/menu/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'csrf-token': csrf
+                    },
+                    body: JSON.stringify({
+                        query: document.getElementById("buscar").value,
+                    })
+                }).then(result => {
+                    return result.json(); //Regresa otra promesa
+                }).then(data => {
+                        //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+                        //...
+                        data = data.rows;
+                        let contenido = "";
+                        if (data.length > 0) { 
+                            for (let platillo of data) {
+                                contenido += '<div class="col s12 m6 l4">';
+                                contenido += '<div class="card">';
+                                contenido += '<div class="card-image waves-effect waves-block waves-light">';
+                                contenido += '<img class="activator" src="' + platillo.imagen + '" style="height: 250px;">';
+                                contenido += '</div>';
+                                contenido += '<div class="card-content">';
+                                contenido += '<span class="card-title activator grey-text text-darken-4">';
+                                contenido += platillo.nombre + '<i class="material-icons right">more_vert</i>';
+                                contenido += '</span>';
+                                contenido += '</div>';
+                                contenido += '<div class="card-reveal">';
+                                contenido += '<span class="card-title grey-text text-darken-4">';
+                                contenido += platillo.nombre + '<i class="material-icons right">close</i>';
+                                contenido += '</span>';
+                                contenido += '<p>' + platillo.descripcion + '</p>';
+                                contenido += '</div>';
+                                contenido += '</div>';
+                                contenido += '</div>';
+                            }
+                        }
+                        else{
+                            contenido += '<h1 style="text-align: center;">No hay platillos que coninciden con tu búsqueda</h1>';
+                        }
+                        document.getElementById("container_platillos").innerHTML = contenido;
+                }).catch(err => {
+                    console.log(err);
+                });
+            };
+        </script>
             </html>

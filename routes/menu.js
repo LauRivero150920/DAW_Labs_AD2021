@@ -15,4 +15,6 @@ router.get('/add', isAuth, menuController.getAdd);
 
 router.post('/add', isAuth, menuController.postAdd);
 
+router.post('/search', menuController.postSearch);
+
 module.exports = router;

@@ -1,4 +1,5 @@
 const session = require('express-session');
+const platillo = require('../models/platillo');
 const { fetchAll } = require('../models/platillo');
 const Platillo = require('../models/platillo');
 
@@ -46,4 +47,19 @@ exports.postAdd = (request, response, next) => {
             console.log(err);
             response.status(302).redirect('/error');
         });
+};
+
+exports.postSearch = (request, response, next) => {
+    console.log(request.body.query);
+    platillo.find(request.body.query)
+        .then( ([rows, fieldData]) => {
+            response.status(200).json({rows});
+        })
+        .catch(
+            err => {
+                console.log(err);
+                esponse.status(200).json({error: err});
+            }
+        );
+    
 };

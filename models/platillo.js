@@ -24,4 +24,8 @@ module.exports = class platillo {
             return db.execute('SELECT * FROM platillos WHERE id = ?', [id]);
         }
     }
+
+    static find(query){
+        return db.execute('SELECT * FROM platillos WHERE nombre LIKE ? OR descripcion LIKE ?', ['%' + query + '%', '%' + query + '%']);
+    }
 }
